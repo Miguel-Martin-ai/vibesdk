@@ -101,6 +101,19 @@ export function getTemplatesData(): SecretTemplate[] {
 			required: false,
 			category: 'ai',
 		},
+		{
+			id: 'TOGETHER_API_KEY',
+			displayName: 'Together AI API Key',
+			envVarName: 'TOGETHER_API_KEY',
+			provider: 'together',
+			icon: '🤝',
+			description: 'Together AI API key for DeepSeek, Qwen, and other models',
+			instructions: 'Go to Together AI → Settings → API Keys → Create new key',
+			placeholder: 'Your Together AI API key',
+			validation: '^[a-zA-Z0-9_-]{32,}$',
+			required: false,
+			category: 'ai',
+		},
 
 		// BYOK (Bring Your Own Key) AI Providers - Lenient validation for compatibility
 		{
@@ -156,6 +169,20 @@ export function getTemplatesData(): SecretTemplate[] {
 				'Use your Cerebras API key for high-performance inference via Cloudflare AI Gateway',
 			instructions: 'Go to Cerebras Platform → API Keys → Create new key',
 			placeholder: 'csk-... or any format',
+			validation: '^.{10,}$',
+			required: false,
+			category: 'byok',
+		},
+		{
+			id: 'TOGETHER_API_KEY_BYOK',
+			displayName: 'Together AI (BYOK)',
+			envVarName: 'TOGETHER_API_KEY_BYOK',
+			provider: 'together',
+			icon: '🤝',
+			description:
+				'Use your Together AI API key for DeepSeek, Qwen, and other models via Cloudflare AI Gateway',
+			instructions: 'Go to Together AI → Settings → API Keys → Create new key',
+			placeholder: 'Your Together AI API key',
 			validation: '^.{10,}$',
 			required: false,
 			category: 'byok',
