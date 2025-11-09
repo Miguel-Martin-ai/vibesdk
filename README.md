@@ -77,6 +77,11 @@ Before clicking "Deploy to Cloudflare", have these ready:
 ### 🔑 Required API Key
 - **Google Gemini API Key** - Get from [ai.google.dev](https://ai.google.dev)
 
+### 🔑 Optional API Keys (for additional AI providers)
+- **Together AI API Key** - Get from [api.together.xyz](https://api.together.xyz) - Enables access to DeepSeek, Qwen, Llama, and other models
+- **OpenAI API Key** - For GPT models
+- **Anthropic API Key** - For Claude models
+
 Once you click "Deploy to Cloudflare", you'll be taken to your Cloudflare dashboard where you can configure your VibeSDK deployment with these variables. 
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/vibesdk)
@@ -84,6 +89,9 @@ Once you click "Deploy to Cloudflare", you'll be taken to your Cloudflare dashbo
 ### 🔑 What you'll configure
 
 - `GOOGLE_AI_STUDIO_API_KEY` - Your Google Gemini API key for Gemini models
+- `TOGETHER_API_KEY` - (Optional) Your Together AI API key for DeepSeek, Qwen, Llama and other models
+- `OPENAI_API_KEY` - (Optional) Your OpenAI API key for GPT models
+- `ANTHROPIC_API_KEY` - (Optional) Your Anthropic API key for Claude models
 - `JWT_SECRET` - Secure random string for session management
 - `WEBHOOK_SECRET` - Webhook authentication secret
 - `SECRETS_ENCRYPTION_KEY` - Encryption key for secrets
@@ -362,6 +370,7 @@ bun run deploy  # Builds and deploys automatically (includes remote DB migration
    wrangler secret put ANTHROPIC_API_KEY
    wrangler secret put OPENAI_API_KEY
    wrangler secret put GOOGLE_AI_STUDIO_API_KEY
+   wrangler secret put TOGETHER_API_KEY
    # ... etc
    ```
 
